@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--This is the file that defines the IDs for all the commands exposed by VisualStudio. -->
+  <Extern href="stdidcmd.h" />
+
+  <!--This header contains the command ids for the menus provided by the shell. -->
+  <Extern href="vsshlids.h" />
+
+  <Commands package="guidMagicLampPkg">
+    <Groups>
+      <Group guid="guidSolutionToolbarCmdSet" id="SolutionToolbarGroup" priority="0xF000">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_TOOL_PROJWIN" />
+      </Group>
+    </Groups>
+
+    <Buttons>
+      <Button guid="guidSolutionToolbarCmdSet" id="cmdCreateSolution" priority="0x0001" type="Button">
+        <Parent guid="guidSolutionToolbarCmdSet" id="SolutionToolbarGroup" />
+        <Icon guid="guidImages" id="bmpMainIcon" />
+        <Strings>
+          <ButtonText>Magic Lamp</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+
+    <Bitmaps>
+      <Bitmap guid="guidImages" href="Resources\Images.png" usedList="bmpMainIcon" />
+    </Bitmaps>
+  </Commands>
+
+
+  <Symbols>
+    <!-- This is the package guid. -->
+    <GuidSymbol name="guidMagicLampPkg" value="{54b81f71-ff2d-4f5f-835d-e3b83dcb6921}" />
+
+    <GuidSymbol name="guidSolutionToolbarCmdSet" value="{147A8F55-BF31-4D14-B6F7-A24B5B45B86F}">
+      <IDSymbol name="SolutionToolbarGroup" value="0x1000" />
+      <IDSymbol name="cmdCreateSolution" value="0x01001" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidImages" value="{f9363bea-4c66-45b7-ae3e-b2326dde96ee}">
+      <IDSymbol name="bmpMainIcon" value="1" />
+    </GuidSymbol>
+  </Symbols>
+
+</CommandTable>
